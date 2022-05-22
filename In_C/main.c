@@ -4,26 +4,23 @@
 
 /* Global Variables */
 /* Structure Decleration */
-
 struct studentID{
     char Name[50];
     int Age;
     int Birth_Year;
 };
-
-/* Function Declerations */
+/* Function Prototypes */
 void printID(struct studentID person);
 
-int main()
-{
+int main(){
     /* Create struct variables*/
-    struct studentID person;
-    
-    person.Age = 25;
-    person.Birth_Year = 1996;
-    strcpy(person.Name, "BOB");
-    
-    printID(person);
+    struct studentID person = {"BOB", 25, 1996};
+    // struct studentID person;
+    // person.Age = 25;
+    // person.Birth_Year = 1996;
+    // strcpy(person.Name, "BOB");
+
+        printID(person);
     return 0;
 }
 
