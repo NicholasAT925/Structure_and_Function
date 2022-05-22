@@ -9,18 +9,30 @@ struct studentID{
     int Age;
     int Birth_Year;
 };
+struct IKEA_ITEM{
+    char Name[20];
+    int itemID;
+    int price;
+};
+
 /* Function Prototypes */
 void printID(struct studentID person);
+void printIKEA(struct IKEA_ITEM *);
+
 
 int main(){
-    /* Create struct variables*/
-    struct studentID person = {"BOB", 25, 1996};
-    // struct studentID person;
-    // person.Age = 25;
-    // person.Birth_Year = 1996;
-    // strcpy(person.Name, "BOB");
+    struct studentID me = {"BOB", 25, 1996};
+    printID(me);
 
-        printID(person);
+    printf("\n\n");
+
+    struct IKEA_ITEM drawer = {"Alex Drawer", 125, 25};
+    struct IKEA_ITEM *item1;
+    item1 = &drawer;
+    printIKEA(item1);
+    printf("IKEA item %s\n", drawer.Name);
+    printf("IKEA ID %d\n", drawer.itemID);
+    printf("IKEA price $%d\n", drawer.price);
     return 0;
 }
 
@@ -30,4 +42,12 @@ void printID(struct studentID person){
     printf("Your Age is %d\n", person.Age);
     printf("Your date of birth is %d\n", person.Birth_Year);
 }
-
+void printIKEA(struct IKEA_ITEM *furniture){
+    printf("IKEA item %s\n", furniture->Name);
+    printf("IKEA ID %d\n", furniture->itemID);
+    printf("IKEA price $%d\n", furniture->price);
+    printf("\n\nNow changing members value\n\n");
+    strcpy(furniture->Name,"power drawer");
+    furniture->itemID = 200;
+    furniture->price = 300;
+}
