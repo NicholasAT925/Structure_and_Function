@@ -47,6 +47,7 @@ void printIKEA(struct IKEA_ITEM *furniture){
     printf("IKEA ID %d\n", furniture->itemID);
     printf("IKEA price $%d\n", furniture->price);
     printf("\n\nNow changing members value\n\n");
+    /* Changing structure member */
     strcpy(furniture->Name,"power drawer");
     furniture->itemID = 200;
     furniture->price = 300;
